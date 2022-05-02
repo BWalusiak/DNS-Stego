@@ -32,6 +32,7 @@ def receive_data(udps, file):
         file.write(b'\n===============================')
         file.close()
         end_file = True
+        exit(0)
     if not end_file:
         file.write(secret)    
     return data, addr, type, domain, answer, secret
