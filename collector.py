@@ -29,7 +29,7 @@ def receive_data(udps, file):
     domain = domain.decode()
     secret = byte_xor(secret, bytes(domain[:6] + 'A' * max(6 - len(domain), 0), "utf-8"))
     if b"\x00\x00\x00\x00\x00\x00" in secret:
-        file.write(b'===============================')
+        file.write(b'\n===============================')
         file.close()
         end_file = True
     if not end_file:
